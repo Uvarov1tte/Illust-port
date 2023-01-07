@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;700&family=Roboto+Condensed:wght@700&display=swap');
+
+html {
+    height: 100%;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+/* background behind each page */
+body.home>div.background {
+    background-image: url('media/miscellaneous/main.png');
+    background-attachment: fixed;
+}
+body.works>div.background {
+    background-image: url('media/miscellaneous/works.png');
+    background-attachment: fixed;
+}
+body.about>div.background {
+    background-image: url('media/miscellaneous/about.png');
+    background-attachment: fixed;
+}
+body.contacts>div.background {
+    background-image: url('media/miscellaneous/contact.png');
+    background-attachment: fixed;
+}
+.background{
+    width: 100vw;
+    height: 100vh;
+    position: fixed; top: 0; left:0;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    z-index: -1000;
+}
+
+
+/* general elements */
+body{
+    min-height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    background-color: #0c1012;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:#b5cbc4;
+    padding: 0;
+    margin: 0 4%;
+    border-right: #b5cbc4 solid 1px;
+}
+p{
+    font-size: 18px;
+    line-height: 25px;
+}
+
+/*  */
+/* header and nav bar */
+.header{
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+    padding-top: 4%;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    transition: background-color 200ms ease-in;
+}
+
+/* in the works page, when hovered, a background appears behind the header => easier to see */
+body.works>.header:hover{
+    background-color: rgb(12, 16, 18, 0.75);
+    transition: background-color 200ms ease-in;
+}
+
+.navigation{
+    margin-left: auto;
+    margin-right: 2em;
+    width: 35%;
+    
+}
+ul.navbar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+ul.navbar li {
+    float: left;
+    width: 25%;
+    cursor: pointer
+}
+ul.navbar li a {
+    font-weight: 200;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: #b5cbc4;
+}
+ul.navbar li a:hover{
+    transition: transform .2s;
+    transform: scale(1.1);
+    z-index: 900;
+}
+ul.navbar li a.selected{
+    font-weight: 400;
+}
+.logo{
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-image: url('media/miscellaneous/logo.png');
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    z-index: 1300;
+}
+
+/*  */
+/* mobile nav bar - will replace regular nav bar when screen width < 800 px */
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: #b5cbc4;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* transform into x sign when small screen nav-bar is open */
+.bar1 .open {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+.bar3 .open {
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+.bar2 .open {
+  opacity: 0;
+}
+
+.mobile-nav {
+    display: none;
+    list-style-type: none;
+    background-color: #0c1012;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+}
+.mobile-nav .open {
+    opacity: 0;
+    animation: fadein 0.5s;
+    animation-fill-mode: forwards;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.mobile-nav li{
+    margin-top: 40px;
+}
+.mobile-nav li a {
+    font-weight: 200;
+}
+
+.mobile-nav li a.selected {
+    font-weight: 400;
+}
+
+
+/*  */
+/* detailed elements */
+a{
+    text-decoration: none;
+    color: #b5cbc4;
+    font-weight: 400;
+}
+
+.greeting{
+    font-family: 'Roboto Condensed', sans-serif;
+    width: 50%;
+    font-size: 6em;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+    border-bottom: solid #b5cbc4 1px;
+}
+
+h2{
+    margin-top: 1.5em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 4em;
+    margin-bottom: 0;
+    width: 50%;
+    border-bottom: #b5cbc4 solid 1px;
+}
+
+h2.works{
+    margin-top: 1em;
+}
+.detail{
+    width: 50%;
+}
+
+div.article{
+    /* display: grid; */
+    padding:5px;
+}
+/* grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 5%;
+    row-gap: 40px;
+    padding: 5px;
+}
+.grid-container>div {
+    padding-bottom: 133.33%;
+    background-size: cover;
+    background-position: 50%;
+    transition: transform .2s;
+}
+
+.grid-container>div:hover{
+    transform: scale(1.2);
+    z-index: 900;
+}
+div.long1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding-bottom: 61.54%;
+}
+div.long2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    padding-bottom: 61.54%;
+}
+
+img.profile{
+    width: 55%;
+    position: absolute; 
+    bottom: 0; 
+    right: 0;
+}
+
+
+/* form */
+#divider{
+    border-top: 1px solid #b5cbc4;
+    width: 50%;
+}
+
+form{
+    width:50%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+}
+.input{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #b5cbc4;
+    border: 1px solid #b5cbc4;
+    border-radius: 4px;
+    background-color: rgb(12, 16, 18, 0.5);
+    margin: 10px 0px;
+    padding: 10px;
+}
+button{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border: 1px solid #b5cbc4;
+    border-radius: 4px;
+    color: #0c1012;
+    background-color: #b5cbc4;
+    width: 100px;
+    padding: 5px;
+    align-self: center;
+    transition: transform .5s;
+}
+button:hover{
+    transform: translate(0, -2px);
+    transition: transform .5s;
+}
+button:active{
+    border: 1px solid #0c1012;
+    color: #b5cbc4;
+    background-color: #0c1012;
+    transition: transform 0.5s;
+}
+/* for page load animation */
+.hidden {
+    opacity: 0;
+}
+
+.visible{
+    opacity: 0;
+    animation: fadein 1s;
+    animation-fill-mode: forwards;  
+}
+
+
+
+@keyframes fadein {    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@media
+(prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+
+/* smaller screen size */
+@media (max-width: 1250px) {
+    .navigation{
+        width: 50%;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 4%;
+        row-gap: 20px;
+        padding: 5px;
+    }
+    .grid-container>div {
+        padding-bottom: 133.33%;
+        background-size: cover;
+        background-position: 50%;
+    }
+    div.long1, div.long2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding-bottom: 61.54%;
+    }
+    img.profile{
+        top: 100px; 
+        right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .navigation {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+        position: absolute;
+        top: 4%;
+        right: 4%;
+        z-index: 1200;
+    }
+    body{
+        border:none;
+    }
+    .detail{
+        width: 100%;
+    }
+    .greeting{
+        width: 75%;
+        font-size: 4em;
+        margin-top: 1.5em;
+    }
+
+    h2{
+        margin-top: 1em;
+        font-size: 2.5em;
+        width: 75%;
+    }
+    form{
+        width: 100%;
+    }
+    #divider{
+        width: 75%;
+    }
+    img.profile{
+        padding-top: 20px;
+        position: relative;
+        width: 100%;
+    }
+}

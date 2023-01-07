@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alm4nditte || Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body contacts">
+    <div class="background"></div>
+    <div class="header">
+        <div class="logo"></div>
+        <div class="navigation">
+            <ul class="navbar">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contacts.html" class="selected">CONTACTS</a></li>
+            </ul>
+        </div>
+    </div>
+    <div onclick="toggleMobileMenu(this)">
+        <div id="hamburger-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contacts.html" class="selected">CONTACTS</a></li>
+      </ul>
+    </div>
+    <div class="content">
+        <div class="article">
+            <h2 class="title">CONTACTS</h2>
+            <p class="detail">Email: <a href="mailto:alm4nditte.fl@gmail.com">alm4nditte.fl@gmail.com</a></p>
+            <p class="detail">Social media: <a href="https://twitter.com/alm4nditte">Twitter</a></p>
+            <div id="divider"></div>
+            <div id="form">
+                <form action="">
+                    <p>Want to leave a comment?</p>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="input">
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" id="comment" class="input"></textarea>
+                    <button type="button" onclick="storeComment()" id="button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
